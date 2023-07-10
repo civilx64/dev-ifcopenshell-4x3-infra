@@ -1,4 +1,3 @@
 .pytest_cache
 .vscode
 __pycache__
-out/glTF
