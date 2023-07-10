@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LandXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.2 http://www.landxml.org/schema/landxml-1.2/LandXML-1.2.xsd" version="1.2" date="2023-06-30" time="17:36:07" xmlns="http://www.landxml.org/schema/LandXML-1.2">
+	<Units>
+		<Imperial areaUnit="squareFoot" linearUnit="USSurveyFoot" volumeUnit="cubicYard" temperatureUnit="fahrenheit" pressureUnit="inHG" directionUnit="radians" />
+	</Units>
+	<Application name="OpenRoads Designer" version="10.10.21.04" manufacturer="Bentley Systems, Inc." manufacturerURL="http://www.bentley.com" />
+	<CgPoints />
+	<Alignments>
+		<Alignment name="GCHC" length="3691.6886429780052" state="proposed" staStart="384220.07000000001">
+			<CoordGeom name="GCHC" state="proposed">
+				<Curve crvType="arc" rot="cw" radius="887.99999999999989" length="484.31606978664871" chord="478.33561110183507">
+					<Start>63676.933565447172 41371.269991940542 0</Start>
+					<Center>63022.667324540387 40770.870386669434 0</Center>
+					<End>63270.548329994323 41623.571393550003 0</End>
+					<Feature>
+						<Property label="style" value="Alignment\P_ALG_Horizontal" />
+					</Feature>
+				</Curve>
+				<Line dir="4.9952928679768123" length="470.76593977539756">
+					<Start>63270.548329994323 41623.571393550017 0</Start>
+					<End>62818.495862819138 41754.983481934018 0</End>
+					<Feature>
+						<Property label="style" value="Alignment\P_ALG_Horizontal" />
+					</Feature>
+				</Line>
+				<Curve crvType="arc" rot="ccw" radius="599.99999999999989" length="2142.6559536193777" chord="1172.4355636099433">
+					<Start>62818.495862819153 41754.98348193401 0</Start>
+					<Center>62985.983028666422 42331.132810907358 0</Center>
+					<End>63378.176243782495 42785.208225367249 0</End>
+					<Feature>
+						<Property label="style" value="Alignment\P_ALG_Horizontal" />
+					</Feature>
+				</Curve>
+				<Line dir="2.2832008168295843" length="354.60322484011681">
+					<Start>63378.176243782487 42785.208225367256 0</Start>
+					<End>63646.537254262621 42553.419927299627 0</End>
+					<Feature>
+						<Property label="style" value="Alignment\P_ALG_Horizontal" />
+					</Feature>
+				</Line>
+				<Curve crvType="arc" rot="cw" radius="588.99999999999875" length="239.34745495646382" chord="237.70403662856367">
+					<Start>63646.537254262657 42553.419927299612 0</Start>
+					<Center>64031.540260434944 42999.170625827726 0</Center>
+					<End>63854.082214969785 42437.539392633131 0</End>
+					<Feature>
+						<Property label="style" value="Alignment\P_ALG_Horizontal" />
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Profile>
+				<ProfAlign name="GCHC">
+					<PVI>384220.06997525255 753.74662945225111</PVI>
+					<ParaCurve length="700.00000000000011">384975 734.33853132104355</ParaCurve>
+					<ParaCurve length="900">386415 800.66890876299533</ParaCurve>
+					<ParaCurve length="430.00000000000017">387460 758.34649340451347</ParaCurve>
+					<ParaCurve length="220.0000000000006">387800 752.54849490012919</ParaCurve>
+					<PVI>387911.75864767347 753.68149263211262</PVI>
+					<Feature code="ProfAlign">
+						<Property label="style" value="Alignment\P_ALG_Horizontal" />
+					</Feature>
+				</ProfAlign>
+			</Profile>
+		</Alignment>
+	</Alignments>
+</LandXML>
