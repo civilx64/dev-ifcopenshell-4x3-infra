@@ -28,15 +28,19 @@ if geometry:
     test_file = f"{test_name}.ifc"
 else:
     test_file = f"{test_name}_no_geometry.ifc"
-in_file = os.path.join(awc_path, test_file)
+
+lp_path = os.path.join("tests", "data")
+
+# in_file = os.path.join(awc_path, test_file)
+in_file = os.path.join(lp_path, "UT_LinearPlacement_2.ifc")
 
 model = ifcopenshell.open(in_file)
 
 align = model.by_type("IfcAlignment")[0]
 
-clot = model.by_type("IfcClothoid")[0]
-seg = model.by_type("IfcCurveSegment")[0]
-comp_curve_ent = model.by_type("IfcCompositeCurve")[0]
+# clot = model.by_type("IfcClothoid")[0]
+# seg = model.by_type("IfcCurveSegment")[0]
+# comp_curve_ent = model.by_type("IfcCompositeCurve")[0]
 
 # comp_curve = IfcCompositeCurve(comp_curve_ent)
 # comp_curve.convert()
@@ -51,10 +55,7 @@ except RuntimeError:
     raise RuntimeError(msg)
 """
 
-
 alignment = Alignment().from_entity(align)
 pts = alignment.create_shape(use_representation=False)
-
-cants = pts[:, 4]
 
 print(pts.shape)
