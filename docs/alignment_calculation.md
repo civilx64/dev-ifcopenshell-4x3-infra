@@ -1,6 +1,6 @@
 # Alignment Geometry Calculation
 
-The implementation of alignment geometry in IfcOpenShell results in
+The python implementation of alignment geometry in IfcOpenShell results in
 a polyline of points calculated at discrete locations along an alignment.
 
 ## Input data
