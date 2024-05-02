@@ -74,7 +74,7 @@ def create_vcurve(file,p,start_slope,end_slope,length):
                                                  [0.0,1.0],
                                                  [A,B,C]);
     curve_segment = file.createIfcCurveSegment(Transition="CONTSAMEGRADIENT",
-                                               Placement=file.createIfcAxis2Placement2D(p,file.createIfcDirection((1.0,0.0))),
+                                               Placement=file.createIfcAxis2Placement2D(p,file.createIfcDirection((math.sqrt(1.0-start_slope*start_slope),start_slope))),
                                                SegmentStart=file.createIfcLengthMeasure(0.0),
                                                SegmentLength=file.createIfcLengthMeasure(length),
                                                ParentCurve=parent_curve)
