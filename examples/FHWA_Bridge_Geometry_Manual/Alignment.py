@@ -15,7 +15,7 @@ def create_tangent(file,p,dir,length):
                                                ParentCurve=parent_curve)
 
     # business logic
-    design_parameters = file.createIfcAlignmentHorizontalSegment(StartPoint=p,StartDirection=dir,SegmentLength=length,PredefinedType="LINE")
+    design_parameters = file.createIfcAlignmentHorizontalSegment(StartPoint=p,StartDirection=dir,StartRadiusOfCurvature=0.0,EndRadiusOfCurvature=0.0,SegmentLength=length,PredefinedType="LINE")
 
     alignment_segment = file.createIfcAlignmentSegment(ifcopenshell.guid.new(),DesignParameters=design_parameters)
 
@@ -35,7 +35,7 @@ def create_hcurve(file,pc,dir,radius,lc):
                                                ParentCurve=parent_curve)
 
     #business logic
-    design_parameters = file.createIfcAlignmentHorizontalSegment(StartPoint=pc,StartDirection=dir,SegmentLength=lc,PredefinedType="CIRCULARARC")
+    design_parameters = file.createIfcAlignmentHorizontalSegment(StartPoint=pc,StartDirection=dir,StartRadiusOfCurvature=radius,EndRadiusOfCurvature=radius,SegmentLength=lc,PredefinedType="CIRCULARARC")
 
     alignment_segment = file.createIfcAlignmentSegment(ifcopenshell.guid.new(),DesignParameters=design_parameters)
 
@@ -131,7 +131,7 @@ axis_model_representation_subcontext = file.createIfcGeometricRepresentationSubC
     ParentContext=geometric_representation_context,
     TargetView="MODEL_VIEW")
 
-global_placement = file.createIfcAxis2Placement3D()
+global_placement = file.createIfcLocalPlacement(RelativePlacement=file.createIfcAxis2Placement3D(Location=file.createIfcCartesianPoint((0.,0.,0.))))
 
 #
 # Define horizontal alignment
@@ -372,6 +372,7 @@ list_alignments_referenced_in_site = [alignment]
 for i in range(3):
     name = "Site of Bridge %d" %(i+1)
     site = file.createIfcSite(ifcopenshell.guid.new(),Name=name)
+    run("aggregate.assign_object",file,products=[site],relating_object=project) #aggregate the site with the project
     file.createIfcRelReferencedInSpatialStructure(ifcopenshell.guid.new(),Description="Alignments referenced into the spatial structure of Bridge Site %d"%(i+1),RelatedElements=list_alignments_referenced_in_site,RelatingStructure=site)
 
 
