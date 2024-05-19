@@ -1,0 +1,10 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dev-ifcopenshell-4x3-infra
+    volumes:
+      - .:/app
+      - ~/src/IFC-Rail-Unit-Test-Reference-Code:/root/src/IFC-Rail-Unit-Test-Reference-Code
