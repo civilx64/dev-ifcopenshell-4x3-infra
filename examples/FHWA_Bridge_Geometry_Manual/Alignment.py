@@ -44,11 +44,12 @@ def create_hcurve(file,pc,dir,radius,lc):
 # creates geometry and business logic segments for vertical profile gradient runs
 def create_gradient(file,p,slope,length):
     # geometry
-    parent_curve = file.createIfcLine(file.createIfcCartesianPoint((0.,0.)),file.createIfcVector(file.createIfcDirection((1.0,0.0)), 1.0))
+    direction = file.createIfcDirection((math.sqrt(1-slope*slope),slope))
+    parent_curve = file.createIfcLine(p,file.createIfcVector(direction, 1.0))
     curve_segment = file.createIfcCurveSegment(Transition="CONTSAMEGRADIENT",
-                                               Placement=file.createIfcAxis2Placement2D(p, file.createIfcDirection((math.sqrt(1-slope*slope),slope))),
+                                               Placement=file.createIfcAxis2Placement2D(p, direction),
                                                SegmentStart=file.createIfcLengthMeasure(0.0),
-                                               SegmentLength=file.createIfcLengthMeasure(length),
+                                               SegmentLength=file.createIfcLengthMeasure(length/math.sqrt(1-slope*slope)),
                                                ParentCurve=parent_curve)
 
     #business logic
