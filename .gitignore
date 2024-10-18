@@ -1,3 +1,6 @@
+.idea
+.Trash-0
+.ipynb_checkpoints
 .pytest_cache
 .vscode
 __pycache__
